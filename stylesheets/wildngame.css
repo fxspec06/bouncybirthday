@@ -1,0 +1,112 @@
+/*
+ *
+ * Copyright 2011 fxspec06 (Bryan Leasot)
+ * Not for distribution
+ * Use of Villo appliccable to the appropriate licenses
+ *
+ */
+#game-title {
+	position:fixed;
+	width:480px;
+	height:56px;
+	top:0px;
+	left:0px;
+	visibility: hidden;
+}
+.held {
+	height:21px;
+	width:61px;
+	top:247px;
+	position:fixed;
+	visibility:hidden;
+}
+#deal {
+	top:292px;
+	left:365px;
+	width:115px;
+	height:26px;
+	position:fixed;
+	visibility:hidden;
+}
+#wild {
+	left:27px;
+	top:69px;
+	width:87px;
+	height:27px;
+	position:fixed;
+	visibility:hidden;
+}
+#score {
+	left:232px;
+	top:69px;
+	width:111px;
+	height:27px;
+	position:fixed;
+}
+#game, #game2, #gameZone {
+	height:320px;
+	/*width:100%;*/
+	position:fixed;
+	left:0px;
+	top:0px;
+}
+.tapZone {
+	position:fixed;
+	width:86px;
+	height:127px;
+	top:107px;
+	z-index: 999999999;
+}
+#divider {
+	top:280px;
+	left:0px;
+	position:fixed;
+	width:480px;
+	height:5px;
+}
+#deal-bar {
+	top:285px;
+	left:0px;
+	width:480px;
+	height:35px;
+	position:fixed;
+}
+.wildScore {
+}
+#winnerBar {
+	top:285px;
+	left:0px;
+	width:480px;
+	height:35px;
+	position:fixed;
+	visibility:hidden;
+}
+#winner {
+	top:287px;
+	left:0px;
+	width:480px;
+	height:30px;
+	position:fixed;
+	visibility:hidden;
+}
+#statusBar {
+	top:75px;
+	left:0px;
+	width:480px;
+	height:15px;
+	position:fixed;
+}
+.wildCard {
+	top:69px;
+	left:120px;
+	width:26px;
+	height:26px;
+	position:fixed;
+}
+.scoreDigit {
+	top:69px;
+	width:26px;
+	height:26px;
+	position:fixed;
+	visibility:inherit;
+}

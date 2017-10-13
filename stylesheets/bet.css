@@ -1,0 +1,36 @@
+/*
+ *
+ * Copyright 2011 fxspec06 (Bryan Leasot)
+ * Not for distribution
+ * Use of Villo appliccable to the appropriate licenses
+ *
+ */
+#pause {
+}
+#gamePaused {
+	left:51px;
+	top:10px;
+	position:absolute;
+	width:377px;
+	height:42px;
+	background:url("../images/menu/pause/GAME-PAUSED.png");
+	visibility:hidden;
+}
+#resumeGame {
+	left:150px;
+	top:77px;
+	position:absolute;
+	width:180px;
+	height:23px;
+	background:url("../images/menu/pause/RESUME.png");
+	visibility:hidden;
+}
+#bet {
+	left:199px;
+	top:128px;
+	position:absolute;
+	width:82px;
+	height:23px;
+	background:url("../images/menu/pause/BET.png");
+	visibility:hidden;
+}

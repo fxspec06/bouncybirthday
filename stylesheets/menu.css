@@ -1,0 +1,481 @@
+/*
+ *
+ * Copyright 2011 fxspec06 (Bryan Leasot)
+ * Not for distribution
+ * Use of Villo appliccable to the appropriate licenses
+ *
+ */
+#screwThis {
+	background: url("../images/backdrops/backdrop1.jpg") top left repeat;
+	width: 1024px;
+	height: 768px;
+	z-index: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.fixedDiv {
+	position: fixed;
+}
+.bouncingIcon {
+	height: 80px;
+	position: fixed;
+	visibility: hidden;
+	width: 80px;
+}
+.fullScreen {
+	top: 0;
+	left: 0;
+	height: 320px;
+	position: fixed;
+	visibility: hidden;
+	width: 480px;
+}
+.statsSMALL {
+	visibility: hidden;
+	height: 48px;
+	position: fixed;
+	top: 0px;
+	left: 0;
+	width: 112px;
+}
+.statsLARGE {
+	visibility: hidden;
+	height: 48px;
+	position: fixed;
+	top: 0px;
+	width: 172px;
+}
+#mainMenuTitle {
+	height: 56px;
+	top: 0;
+	left: 0;
+	position: fixed;
+	width: 480px;
+	z-index: 1;
+	display:none;
+}
+.menuOption1 {
+	height: 29px;
+	position: fixed;
+	top: 90px;
+	visibility: hidden;
+}
+.menuOption2 {
+	height: 29px;
+	position: fixed;
+	top: 130px;
+	visibility: hidden;
+}
+.menuOption3 {
+	height: 29px;
+	position: fixed;
+	top: 170px;
+	visibility: hidden;
+}
+.menuOption4 {
+	height: 29px;
+	position: fixed;
+	top: 210px;
+	visibility: hidden;
+}
+.menuOption5 {
+	height: 29px;
+	position: fixed;
+	top: 250px;
+	visibility: hidden;
+}
+#wildnGame {
+	height: 30px;
+	left: 133px;
+	width: 215px;
+}
+#basicGame {
+	left: 142px;
+	width: 197px;
+}
+#options {
+	left: 170px;
+	width: 141px;
+}
+#villo {
+	left: 191px;
+	width: 98px;
+}
+#exit {
+	left: 199px;
+	width: 82px;
+}
+#resume {
+	left: 172px;
+	width: 136px;
+}
+#startNew {
+	left: 148px;
+	width: 184px;
+}
+#payouts {
+	left: 166px;
+	width: 148px;
+}
+#stats {
+	left: 188px;
+	width: 104px;
+}
+#back {
+	left: 194px;
+	width: 92px;
+	height: 28px;
+}
+#areYouSure {
+	height: 29px;
+	left: 145px;
+	width: 191px;
+}
+#changeBet {
+	left: 138px;
+	width: 205px;
+}
+#autoDeal {
+	left: 119px;
+	width: 183px;
+}
+#sound {
+	left: 150px;
+	width: 111px;
+}
+#vnotifications {
+	left: 84px;
+	width: 226px;
+	height: 28px;
+}
+#help {
+	width: 89px;
+	left: 196px;
+}
+#themes {
+	left: 172px;
+	width: 137px;
+}
+#skyLounge {
+	width: 202px;
+	left: 139px;
+}
+#oceanLounge {
+	width: 246px;
+	left: 117px;
+}
+#leaderboards {
+	width: 255px;
+	left: 113px;
+}
+#villoOptions {
+	left: 170px;
+	width: 141px;
+}
+#backupRestore {
+	width: 317px;
+	left: 82px;
+}
+#backup {
+	width: 132px;
+	left: 174px;
+}
+#restore {
+	width: 152px;
+	left: 164px;
+}
+#how-to-play {
+	width: 218px;
+	left: 131px;
+}
+#what-wins {
+	width: 186px;
+	left: 148px;
+}
+#about-villo {
+	width: 237px;
+	left: 121px;
+}
+#about {
+	width: 113px;
+	left: 184px;
+}
+#villoURL {
+	width: 230px;
+	left: 125px;
+	margin-top: 15px;
+	height: 27px;
+}
+#villoTWITTER {
+	width: 109px;
+	left: 185px;
+	margin-top: 15px;
+	height: 27px;
+}
+#webosworldURL {
+	width: 351px;
+	left: 65px;
+	margin-top: 15px;
+	height: 27px;
+}
+#webosworldTWITTER {
+	width: 223px;
+	left: 129px;
+	margin-top: 15px;
+	height: 27px;
+}
+#email {
+	width: 334px;
+	left: 73px;
+	margin-top: 7px;
+	height: 34px;
+}
+#twitter {
+	width: 167px;
+	left: 157px;
+	margin-top: 7px;
+	height: 34px;
+}
+#wildntwitter {
+	width: 233px;
+	left: 124px;
+	margin-top: 7px;
+	height: 34px;
+}
+#rank {
+	height: 21px;
+	left: 2px;
+	position: fixed;
+	top: 300px;
+	visibility: hidden;
+	width: 62px;
+}
+#next {
+	height: 21px;
+	left: 355px;
+	position: fixed;
+	top: 300px;
+	visibility: hidden;
+	width: 62px;
+}
+#BET {
+	height: 29px;
+	left: 206px;
+	position: fixed;
+	visibility: hidden;
+	width: 67px;
+}
+#yes {
+	height: 29px;
+	left: 207px;
+	position: fixed;
+	top: 140px;
+	visibility: hidden;
+	width: 66px;
+}
+#no {
+	height: 29px;
+	left: 215px;
+	position: fixed;
+	top: 190px;
+	visibility: hidden;
+	width: 50px;
+}
+#minus {
+	height: 56px;
+	left: 84px;
+	position: fixed;
+	top: 138px;
+	visibility: hidden;
+	width: 56px;
+}
+.betDigit {
+	height: 56px;
+	position: fixed;
+	top: 138px;
+	width: 56px;
+}
+#plus {
+	height: 56px;
+	left: 340px;
+	position: fixed;
+	top: 138px;
+	visibility: hidden;
+	width: 56px;
+}
+#resumeBet {
+	height: 29px;
+	left: 172px;
+	position: fixed;
+	top: 221px;
+	visibility: hidden;
+	width: 135px;
+}
+.autoDealStatus {
+	height: 29px;
+	left: 319px;
+	position: fixed;
+	top: 90px;
+}
+.soundStatus {
+	height: 29px;
+	left: 281px;
+	position: fixed;
+	top: 130px;
+}
+.vnotificationsStatus {
+	height: 29px;
+	left: 329px;
+	position: fixed;
+	top: 170px;
+}
+#wgPayoutsStatic {
+	height: 194px;
+	left: 36px;
+	position: fixed;
+	top: 62px;
+	visibility: hidden;
+	width: 417px;
+}
+#wgPayoutsFlash {
+	height: 58px;
+	left: 69px;
+	position: fixed;
+	top: 265px;
+	visibility: hidden;
+	width: 359px;
+}
+#bgPayoutsStatic {
+	height: 183px;
+	left: 158px;
+	position: fixed;
+	top: 62px;
+	visibility: hidden;
+	width: 202px;
+}
+#bgPayoutsFlash {
+	height: 53px;
+	left: 65px;
+	position: fixed;
+	top: 265px;
+	visibility: hidden;
+	width: 351px;
+}
+#tapPayouts {
+	height: 265px;
+	left: 0;
+	position: fixed;
+	top: 55px;
+	visibility: hidden;
+	width: 480px;
+}
+#RANKLG {
+	height: 25px;
+	left: 178px;
+	position: fixed;
+	top: 125px;
+	visibility: hidden;
+	width: 90px;
+}
+#NEXTLG {
+	height: 25px;
+	left: 171px;
+	position: fixed;
+	top: 189px;
+	visibility: hidden;
+	width: 88px;
+}
+#STATSTITLE {
+	height: 56px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	visibility: hidden;
+	width: 480px;
+}
+#cardPrevious {
+	height: 56px;
+	left: 84px;
+	position: fixed;
+	top: 113px;
+	visibility: hidden;
+	width: 56px;
+}
+#cardNext {
+	height: 56px;
+	left: 340px;
+	position: fixed;
+	top: 113px;
+	visibility: hidden;
+	width: 56px;
+}
+#showCard {
+	height: 127px;
+	left: 197px;
+	position: fixed;
+	top: 76px;
+	width: 86px;
+}
+#showShadow {
+	height: 137px;
+	left: 192px;
+	position: fixed;
+	top: 71px;
+	visibility: hidden;
+	width: 96px;
+}
+#themesBack {
+	height: 29px;
+	left: 194px;
+	position: fixed;
+	top: 270px;
+	visibility: hidden;
+	width: 91px;
+}
+#backdropPrevious {
+	height: 56px;
+	left: 14px;
+	position: fixed;
+	top: 253px;
+	visibility: hidden;
+	width: 56px;
+}
+#backdropNext {
+	height: 56px;
+	left: 410px;
+	position: fixed;
+	top: 253px;
+	visibility: hidden;
+	width: 56px;
+}
+.confirm {
+	height: 29px;
+	left: 200px;
+	position: fixed;
+	top: 227px;
+	visibility: hidden;
+	width: 80px;
+}
+#cancel {
+	height: 29px;
+	left: 171px;
+	position: fixed;
+	top: 276px;
+	visibility: hidden;
+	width: 137px;
+}
+#skip {
+	top: 297px;
+	left: 370px;
+	width: 102px;
+	height: 27px;
+	position: fixed;
+	visibility: hidden;
+}
+.versionNumber {
+	top:60px;
+	width:23px;
+	height:23px;
+	position:fixed;
+}

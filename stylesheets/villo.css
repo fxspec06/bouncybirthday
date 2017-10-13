@@ -1,0 +1,241 @@
+/*
+ *
+ * Copyright 2011 fxspec06 (Bryan Leasot)
+ * Not for distribution
+ * Use of Villo appliccable to the appropriate licenses
+ *
+ */
+#THEVILLOCENTER {
+	height: 507px;
+	position: fixed;
+	width: 320px;
+	left: 0;
+	top: 0;
+}
+#oceanbg, #oceanbg2, #skybg, #skybg2, #leadersbg, #leadersbg2 {
+	top: 0;
+	left: 0;
+	height: 320px;
+	position: fixed;
+	width: 100%;
+}
+#VILLO-LOGO {
+	width: 250px;
+	height: 375px;
+	left: 115px;
+	position: fixed;
+}
+#SKY-LIGHT {
+	width: 148px;
+	height: 123px;
+	position: fixed;
+	opacity: 0.5;
+	left: 166px;
+	top: 100px;
+}
+#OCEAN-LIGHT {
+	width: 148px;
+	height: 123px;
+	position: fixed;
+	opacity: 0.5;
+	left: 166px;
+	top: 100px;
+}
+#TITLE-VERTICAL {
+	height: 38px;
+	left: 4px;
+	position: fixed;
+	top: 6px;
+	width: 312px;
+}
+#chatScroller, #chatScroller2 {
+	position: fixed;
+	top: 48px;
+	left: 5px;
+}
+#theChatText, #theChatText2 {
+	background-color: #FFF;
+	height: 28px;
+	width: 383px;
+	padding: 0 0 0 0;
+	border: none;
+	vertical-align: top;
+}
+#oceanBack, #skyBack {
+	width: 92px;
+	height: 28px;
+	left: 2px;
+}
+.chatBar {
+	width: 480px;
+	height: 28px;
+	position: fixed;
+}
+#villoBack {
+	left: 2px;
+	width: 92px;
+	height: 28px;
+	top: 320px;
+	position: fixed;
+}
+#leadersBack {
+	top: 320px;
+	width: 92px;
+	height: 28px;
+	left: 2px;
+	position: fixed;
+}
+.bryansWay {
+	background-color: #FFF;
+	height: 25px;
+	left: 0;
+	position: relative;
+	top: -25px;
+	padding: 0 0 0 0;
+	border: none;
+	margin-top: 25px;
+	visibility: inherit;
+	width: 480px;
+	font-style: italic;
+}
+#loginBtn {
+	height: 29px;
+	left: 2px;
+	position: fixed;
+	top: 380px;
+	width: 102px;
+}
+#rememberBox {
+	left: 335px;
+	top: 363px;
+	position: fixed;;
+	width: 124px;
+	height: 44px;
+}
+#doRegister {
+	height: 29px;
+	left: 314px;
+	position: fixed;
+	top: 410px;
+	width: 164px;
+}
+#registerBtn {
+	height: 29px;
+	left: 237px;
+	position: fixed;
+	top: 430px;
+	width: 241px;
+}
+.specImg {
+	background-color: #3b3b3b;
+	border: 1px solid #fff;
+	height: 48px;
+	width: 48px;
+}
+.messageDate {
+	color: #3b3b3b;
+	font-size: 16px;
+}
+.messageSender {
+	color: #3b3b3b;
+	font-size: 18px;
+}
+.messageTitle {
+	color: #000;
+}
+.messageImage {
+	background-color: #3b3b3b;
+	border: 1px solid #fff;
+	float: left;
+	height: 48px;
+	width: 48px;
+}
+.messageIndicator-0 {
+	background-color: blue;
+	height: 10px;
+	position: fixed;
+	right: 5px;
+	top: 5px;
+	width: 10px;
+}
+.messageIndicator-1 {
+	height: 10px;
+	position: fixed;
+	right: 5px;
+	top: 5px;
+	width: 10px;
+}
+#all {
+	left: 164px;
+	width: 154px;
+	height: 29px;
+	top: 56px;
+	position: fixed;
+}
+#latest {
+	left: 178px;
+	width: 124px;
+	height: 29px;
+	top: 56px;
+	position: fixed;
+}
+#month {
+	left: 139px;
+	width: 202px;
+	height: 29px;
+	top: 56px;
+	position: fixed;
+}
+#today {
+	left: 184px;
+	width: 113px;
+	height: 29px;
+	top: 56px;
+	position: fixed;
+}
+#nextLeaderboard {
+	height: 56px;
+	left: 434px;
+	position: fixed;
+	top: 45px;
+	width: 56px;
+}
+#lastLeaderboard {
+	height: 56px;
+	left: 0px;
+	position: fixed;
+	top: 45px;
+	width: 56px;
+}
+#submitNew {
+	position: fixed;
+	width: 201px;
+	height: 29px;
+	left: 139px;
+	bottom: 4px;
+}
+#submitZone {
+	position: fixed;
+	width: 201px;
+	height: 29px;
+	left: 139px;
+	bottom: 4px;
+}
+#leadersScroller {
+	position: fixed;
+	top: 100px;
+	width: 470px;
+	left: 5px;
+}
+#leaderList {
+}
+.categoryItem2 {
+	position: relative;
+	margin-top: 0px;
+	color: #000;
+	background: #f2e3b3;
+	opacity: 1;
+}
+.scroller {
+	z-index: -1;
+}

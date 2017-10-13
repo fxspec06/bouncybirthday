@@ -1,0 +1,304 @@
+<!--
+Copyright 2011 fxspec06 (Bryan Leasot)
+Not for distribution
+Use of Villo appliccable to the appropriate licenses
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Wild'n Video Poker</title>
+		<script src="/usr/palm/frameworks/enyo/1.0/framework/enyo.js" type="text/javascript"></script>
+		<meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, user-scalable=no" />
+		<link href="stylesheets/menu.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="stylesheets/wildngame.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="stylesheets/cards.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="stylesheets/bet.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="stylesheets/load.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="stylesheets/villo.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="stylesheets/messages.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="stylesheets/messages2.css" media="screen" rel="stylesheet" type="text/css">
+		<script src="villo.js"></script>
+		<script src="source/sceneHandler.js"></script>
+		<script src="source/bouncingIcons.js"></script>
+		<script src="source/stage.js"></script>
+		<script src="source/scenes/load.js"></script>
+		<script src="source/scenes/menu.js"></script>
+		<script src="source/scenes/stats.js"></script>
+		<script src="source/scenes/wildngame.js"></script>
+		<script src="source/scenes/login.js"></script>
+		<script src="source/scenes/oceanlounge.js"></script>
+		<script src="source/scenes/skylounge.js"></script>
+		<script src="source/scenes/leaderboards.js"></script>
+		<script src="source/buttons.js"></script>
+		<script src="source/sounds.js"></script>
+		<script src="source/webos.js"></script>
+		<script src="source/deviceType.js"></script>
+		<script src="source/setup.js"></script>
+		<script src="external/iscroll.js"></script>
+	</head>
+	<body width=100% height=100% onload="loadGame()" style="z-index:100;">
+		<script>
+            if(deviceType == "iOS"){
+                console = new Object();
+                console.log = function(log) {
+                    var iframe = document.createElement("IFRAME");
+                    iframe.setAttribute("src","ios-log:#iOS#" + log);
+                    document.documentElement.appendChild(iframe);
+                    iframe.parentNode.removeChild(iframe);
+                    iframe = null;
+                }
+                console.debug = console.log;
+                console.info = console.log;
+                console.warn = console.log;
+                console.error = console.log;
+            }
+            if(deviceType == "webOS" && typeof enyo == "undefined"){
+				window.location = "./requiresEnyo.html";
+            }
+			var oceanScroller, skyScroller, leadersScroller;
+			loadGame = function() {
+				oceanScroller = new iScroll('chatScroller', {
+					vScrollbar : false,
+					hScroll : false
+				});
+				skyScroller = new iScroll('chatScroller2', {
+					vScrollbar : false,
+					hScroll : false
+				});
+				leadersScroller = new iScroll('leadersScroller', {
+					vScrollbar : false,
+					hScroll : false
+				});
+				if(deviceType == "webOS"){
+					enyoComponentz = new enyoComponents().renderInto(document.getElementById("invisible"));
+				}
+				StageAssistant.prototype.setup();
+			}
+		</script>
+		<div id="invisible" style="display:none;"></div>
+		<img alt="" id="mainMenuTitle" src="images/TITLE2.png" />
+		<div id="touchPadDiv" class="fixedDiv"></div>
+		<div id="showBackdropDiv" class="fixedDiv">
+			<img alt="" id="game" src="images/backdrops/backdrop1.jpg" />
+		</div>
+		<div id="load-scene" style="display:none;">
+			<img alt="" id="avatar" src="images/splash/FXSPEC06.png" />
+			<img alt="" id="preSplash" src="images/splash/PRE-SPLASH.png" />
+			<img alt="" id="load" src="images/splash/SPLASH.png" />
+			<img alt="" id="BLINK" src="images/splash/WAIT.png" />
+			<img alt="" id="CONTINUE" src="images/splash/CONTINUE.png" />
+			<img alt="" id="TAP" src="images/splash/TAP.png" onclick="LoadAssistant.prototype.goToMain()">
+		</div>
+		<div id="menu-scene" style="display:none;">
+			<h1 style="position:absolute;top:40px;text-align:center;width:100%;text-size:70px;color: white;">HAPPY BIRTHDAY AARON</h1>
+			<img alt="" id="rank" src="images/menu/sub/RANK.png" />
+			<img alt="" id="next" src="images/menu/sub/NEXT.png" />
+			<div id="r0"></div><div id="r1"></div>
+			<div id="r2"></div><div id="r3"></div>
+			<div id="r4"></div><div id="r5"></div>
+			<div id="r6"></div><div id="r7"></div>
+			<img alt="" id="villoLight" src="images/villo/images/villov-s.png" />
+			<div class="bouncingIcon" id="heartsDiv"></div>
+			<div class="bouncingIcon" id="spadesDiv"></div>
+			<div class="bouncingIcon" id="clubsDiv"></div>
+			<div class="bouncingIcon" id="diamondsDiv"></div>
+			<img alt="" id="villoRegister" src="images/menu/welcome/VILLO-SPLASH.png" />
+			<img alt="" id="villoRegisterYes" src="images/menu/welcome/YES.png" />
+			<img alt="" id="villoRegisterNo" src="images/menu/welcome/NO-THANKS.png" />
+			<div id="tutorialDiv" class="fixedDiv"></div>
+			<img alt="" class="fullScreen" id="backupInfo" src="images/menu/villo/OPTIONS/INFO.png" style="margin-top:5px;" />
+			<img alt="" class="fullScreen" id="warnBackup" src="images/menu/villo/OPTIONS/BACKUP-WARNING.png" />
+			<img alt="" class="fullScreen" id="warnRestore" src="images/menu/villo/OPTIONS/RESTORE-WARNING.png" />
+			<img alt="" class="fullScreen" id="clearGames" src="images/menu/welcome/CLEAR-GAME.png" />
+			<img alt="" class="fullScreen" id="TTC" src="images/menu/stats/TTC.png" />
+			<img alt="" class="fullScreen" id="nextTutorial" src="images/menu/stats/TAPZONE-LARGE.png" />
+			<img alt="" class="fullScreen" id="showNew" src="images/menu/welcome/WELCOME.png" />
+			<div id="backupRestoreDiv" class="fixedDiv"></div>
+			<img alt="" class="menuOption1" id="wildnGame" src="images/menu/main/WILDN-GAME.png" />
+			<img alt="" class="menuOption2" id="basicGame" src="images/menu/main/BASIC-GAME.png" />
+			<img alt="" class="menuOption3" id="options" src="images/menu/main/OPTIONS.png" />
+			<img alt="" class="menuOption4" id="villo" src="images/menu/main/VILLO.png" />
+			<img alt="" class="menuOption5" id="exit" src="images/menu/main/EXIT.png" />
+			<img alt="" class="menuOption1" id="resume" src="images/menu/sub/RESUME.png" />
+			<img alt="" class="menuOption2" id="startNew" src="images/menu/sub/START-NEW.png" />
+			<img alt="" class="menuOption3" id="payouts" src="images/menu/sub/PAYOUTS.png" />
+			<img alt="" class="menuOption4" id="stats" src="images/menu/sub/STATS.png" />
+			<img alt="images/menu/sub/STATS.png" class="menuOption5" id="back" src="images/menu/sub/BACK.png" />
+			<img alt="" class="menuOption1" id="areYouSure" src="images/menu/sub/ARE-YOU-SURE.png" />
+			<img alt="" id="yes" src="images/menu/sub/YES.png" />
+			<img alt="" id="no" src="images/menu/sub/NO.png" />
+			<img alt="" class="menuOption1" id="changeBet" src="images/menu/bet/CHANGE-BET.png" />
+			<img alt="" id="minus" src="images/menu/bet/minus.png" />
+			<img alt="" id="plus" src="images/menu/bet/plus.png" />
+			<div id="betDigit1div" class="fixedDiv"></div>
+			<div id="betDigit2div" class="fixedDiv"></div>
+			<div id="betDigit3div" class="fixedDiv"></div>
+			<img alt="" id="resumeBet" src="images/menu/sub/RESUME.png" />
+			<img alt="" class="menuOption1" id="autoDeal" src="images/menu/options/AUTO-DEAL.png" />
+			<div id="autoDealStatusDiv" class="fixedDiv"></div>
+			<img alt="" class="menuOption2" id="sound" src="images/menu/options/SOUND.png" />
+			<div id="soundStatusDiv" class="fixedDiv"></div>
+			<img alt="" class="menuOption3" id="vnotifications" src="images/menu/villo/OPTIONS/NOTIFICATIONS.png" />
+			<div id="vnotificationsStatusDiv" class="fixedDiv"></div>
+			<img alt="" class="menuOption3" id="themes" src="images/menu/options/THEMES.png" />
+			<img alt="" class="menuOption4" id="help" src="images/menu/options/HELP.png" />
+			<img alt="" class="menuOption1" id="how-to-play" src="images/menu/options/help/HOW-TO-PLAY.png" />
+			<img alt="" class="menuOption2" id="what-wins" src="images/menu/options/help/WHAT-WINS.png" />
+			<img alt="" class="menuOption3" id="about-villo" src="images/menu/options/help/WHAT-IS-VILLO.png" />
+			<img alt="" class="menuOption4" id="about" src="images/menu/options/help/ABOUT.png" />
+			<img alt="" id="bgPayoutsFlash" src="images/menu/payouts/bgPayoutsFlash.png" />
+			<img alt="" id="bgPayoutsStatic" src="images/menu/payouts/bgPayoutsStatic.png" />
+			<img alt="" id="wgPayoutsFlash" src="images/menu/payouts/wgPayoutsFlash.png" />
+			<img alt="" id="wgPayoutsStatic" src="images/menu/payouts/wgPayoutsStatic.png" />
+			<img alt="" id="tapPayouts" src="images/menu/payouts/tapPayouts.png" />
+			<img alt="" id="themesBack" src="images/menu/sub/BACK.png" />
+			<img alt="" id="backdropPrevious" src="images/menu/options/LEFT.png" />
+			<img alt="" id="backdropNext" src="images/menu/options/RIGHT.png" />
+			<img alt="" id="cardPrevious" src="images/menu/options/LEFT.png" />
+			<img alt="" id="cardNext" src="images/menu/options/RIGHT.png" />
+			<img alt="" id="showShadow" src="images/CARD-SHADOW.png" />
+			<div id="showCardDiv" class="fixedDiv"></div>
+			<img alt="" class="menuOption1" id="skyLounge" src="images/menu/villo/SKY-LOUNGE.png" />
+			<img alt="" class="menuOption2" id="oceanLounge" src="images/menu/villo/OCEAN-LOUNGE.png" />
+			<img alt="" class="menuOption3" id="leaderboards" src="images/menu/villo/LEADERBOARDS.png" />
+			<img alt="" class="menuOption4" id="villoOptions" src="images/menu/main/OPTIONS.png" />
+			<img alt="" class="menuOption1" id="backupRestore" src="images/menu/villo/OPTIONS/BACKUP-RESTORE.png" />
+			<img alt="" class="menuOption3" id="backup" src="images/menu/villo/OPTIONS/BACKUP.png" />
+			<img alt="" class="menuOption4" id="restore" src="images/menu/villo/OPTIONS/RESTORE.png" />
+			<img alt="" class="menuOption1" id="villoURL" src="images/menu/options/help/villoURL.png" />
+			<img alt="" class="menuOption2" id="villoTWITTER" src="images/menu/options/help/villoTWITTER.png" />
+			<img alt="" class="menuOption3" id="webosworldURL" src="images/menu/options/help/webosworldURL.png" />
+			<img alt="" class="menuOption4" id="webosworldTWITTER" src="images/menu/options/help/webosworldTWITTER.png" />
+			<img alt="" class="menuOption5" id="email" src="images/menu/options/help/email.png" />
+			<img alt="" class="menuOption4" id="twitter" src="images/menu/options/help/twitter.png" />
+			<img alt="" class="menuOption3" id="wildntwitter" src="images/menu/options/help/wildnTWITTER.png" />
+			<img alt="" id="skip" src="images/SKIP.png" />
+			<img alt="" class="confirm" id="startBackup" src="images/menu/welcome/YES.png" />
+			<img alt="" class="confirm" id="startRestore" src="images/menu/welcome/YES.png" />
+			<img alt="" id="cancel" src="images/menu/villo/OPTIONS/CANCEL.png" />
+			<img alt="" id="BET" class="menuOption5" src="images/menu/sub/BET.png" />
+		</div>
+		<div id="stats-scene" style="display:none;">
+			<img alt="" id="WGLAYOUT" class="fullScreen" src="images/menu/stats/WGLAYOUT.png" />
+			<img alt="" id="BGLAYOUT" class="fullScreen" src="images/menu/stats/BGLAYOUT.png" />
+			<div id="STATSNUMBERS"></div>
+			<img alt="" id="TAPZONE-LARGE" class="fullScreen" src="images/menu/stats/TAPZONE-LARGE.png" />
+			<img alt="" id="CURRENTnSMALL" class="statsSMALL" src="images/menu/stats/CURRENTnSMALL.png" />
+			<img alt="" id="CURRENTnLARGE" class="statsLARGE" src="images/menu/stats/CURRENTnLARGE.png" />
+			<img alt="" id="CURRENTpSMALL" class="statsSMALL" src="images/menu/stats/CURRENTpSMALL.png" />
+			<img alt="" id="CURRENTpLARGE" class="statsLARGE" src="images/menu/stats/CURRENTpLARGE.png" />
+			<img alt="" id="ALL-TIMEnSMALL" class="statsSMALL" src="images/menu/stats/ALL-TIMEnSMALL.png" />
+			<img alt="" id="ALL-TIMEnLARGE" class="statsLARGE" src="images/menu/stats/ALL-TIMEnLARGE.png" />
+			<img alt="" id="ALL-TIMEpSMALL" class="statsSMALL" src="images/menu/stats/ALL-TIMEpSMALL.png" />
+			<img alt="" id="ALL-TIMEpLARGE" class="statsLARGE" src="images/menu/stats/ALL-TIMEpLARGE.png" />
+			<img alt="" id="RANKLG" src="images/menu/stats/RANK.png" />
+			<img alt="" id="NEXTLG" src="images/menu/stats/NEXT.png" />
+		</div>
+		<div id="wildngame-scene" style="display:none;">
+			<div id="card1" class="card">
+				<div id="card1contents" class="fix front rotateCard"></div>
+				<div id="card1backside" class="fix backSide rotateCard"></div>
+			</div>
+			<div id="card2" class="card">
+				<div id="card2contents" class="fix front rotateCard"></div>
+				<div id="card2backside" class="fix backSide rotateCard"></div>
+			</div>
+			<div id="card3" class="card">
+				<div id="card3contents" class="fix front rotateCard"></div>
+				<div id="card3backside" class="fix backSide rotateCard"></div>
+			</div>
+			<div id="card4" class="card">
+				<div id="card4contents" class="fix front rotateCard"></div>
+				<div id="card4backside" class="fix backSide rotateCard"></div>
+			</div>
+			<div id="card5" class="card">
+				<div id="card5contents" class="fix front rotateCard"></div>
+				<div id="card5backside" class="fix backSide rotateCard"></div>
+			</div>
+			<img alt="" id="tapZone1" class="tapZone" style="left:8px;" src="images/TAPZONE.png" />
+			<img alt="" id="tapZone2" class="tapZone" style="left:103px;" src="images/TAPZONE.png" />
+			<img alt="" id="tapZone3" class="tapZone" style="left:198px;" src="images/TAPZONE.png" />
+			<img alt="" id="tapZone4" class="tapZone" style="left:293px;" src="images/TAPZONE.png" />
+			<img alt="" id="tapZone5" class="tapZone" style="left:388px;" src="images/TAPZONE.png" />
+			<div id="gameContents"></div>
+			<div id="scoreDigit1div" class="fixedDiv"></div>
+			<div id="scoreDigit2div" class="fixedDiv"></div>
+			<div id="scoreDigit3div" class="fixedDiv"></div>
+			<div id="scoreDigit4div" class="fixedDiv"></div>
+			<div id="scoreDigit5div" class="fixedDiv"></div>
+			<div id="scoreDigit6div" class="fixedDiv"></div>
+			<div id="wildCard"></div>
+			<img alt="" id="winnerBar" src="images/DEAL-BAR.png" />
+			<div id="winnerZ"></div>
+			<img alt="" id="deal-bar" src="images/DEAL-BAR.png" />
+		</div>
+		<div id="login-scene" style="display:none;">
+			<div id="loginLandscape"></div>
+			<img alt="" src="images/villo/logo-vertical.png" id="VILLO-LOGO" />
+			<div id="loginWrapper" style="top: 275px; visibility: hidden; left: 0px; position:fixed;" class="textfield-group">
+				<div class="title">
+					<input  type="text" class="bryansWay" id="username" />
+				</div>
+				<div class="title">
+					<input  type="password" class="bryansWay" id="password" />
+				</div>
+			</div>
+			<div id="registerWrapper" style="top: 175px; visibility: hidden; left: 0px; position:fixed;" class="textfield-group">
+				<div class="title">
+					<input  type="text" class="bryansWay" id="regUsername" />
+				</div>
+				<div class="title">
+					<input  type="text" class="bryansWay" id="regPassword1" />
+				</div>
+				<div class="title">
+					<input  type="text" class="bryansWay" id="regPassword2" />
+				</div>
+				<div class="title">
+					<input  type="text" class="bryansWay" id="regEmail" />
+				</div>
+			</div>
+			<img alt="" src="images/villo/LOGIN.png" id="loginBtn" />
+			<img alt="" src="images/villo/REGISTER.png" id="registerBtn" />
+			<img alt="" src="images/villo/DOREGISTER.png" id="doRegister" class="reg" />
+			<div id="rememberBoxDiv"></div>
+			<img alt="" id="villoBack" src="images/menu/sub/BACK.png" />
+		</div>
+		<div id="oceanLounge-scene" style="display:none;">
+			<div id="oceanLoungeLandscape"></div>
+			<img alt="" src="images/villo/OCEAN.png" id="OCEAN-LIGHT" />
+			<div id="chatScroller">
+				<div id="chatList"></div>
+			</div>
+			<div id="oceanBottom" class="chatBar">
+				<img alt="" id="oceanBack" src="images/menu/sub/BACK.png" />
+				<input type="text" id="theChatText">
+			</div>
+		</div>
+		<div id="skyLounge-scene" style="display:none;">
+			<div id="skyLoungeLandscape"></div>
+			<img alt="" src="images/villo/SKY.png" id="SKY-LIGHT" />
+			<div id="chatScroller2">
+				<div id="chatList2"></div>
+			</div>
+			<div id="skyBottom" class="chatBar">
+				<img alt="" id="skyBack" src="images/menu/sub/BACK.png" />
+				<input type="text" id="theChatText2">
+			</div>
+		</div>
+		<div id="leaderboards-scene" style="display:none;">
+			<div id="leadersLandscape"></div>
+			<img alt="" src="images/villo/RIGHT.png" id="nextLeaderboard" />
+			<img alt="" src="images/villo/LEFT.png" id="lastLeaderboard" />
+			<img alt="" src="images/villo/ALL.png" class="headerImage" id="all" />
+			<img alt="" src="images/villo/LATEST.png" class="headerImage" id="latest" />
+			<img alt="" src="images/villo/MONTH.png" class="headerImage" id="month" />
+			<img alt="" src="images/villo/TODAY.png" class="headerImage" id="today" />
+			<div id="leadersScroller">
+				<div id="leaderList"></div>
+			</div>
+			<img alt="" src="images/villo/SUBMIT.png" id="submitNew" />
+			<img alt="" src="images/villo/SUBMIT-ZONE.png" id="submitZone" />
+			<img alt="" id="leadersBack" src="images/menu/sub/BACK.png" />
+		</div>
+	</body>
+</html>

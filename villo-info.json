@@ -1,0 +1,13 @@
+ villo.info({
+	"id": "me.villo.villov",
+	"version": "0.8.9",
+	"developer": "Villo",
+	"type": "PhoneGap",
+	"title": "Villo",
+	"api": "",
+	"push": true,
+	"extensions": [
+		"extensions/updater/",
+		"extensions/common/"
+	]
+});

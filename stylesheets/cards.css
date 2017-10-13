@@ -1,0 +1,111 @@
+/*
+ *
+ * Copyright 2011 fxspec06 (Bryan Leasot)
+ * Not for distribution
+ * Use of Villo appliccable to the appropriate licenses
+ *
+ */
+
+
+@-webkit-keyframes flipCard
+{
+from 0% to 42%{-webkit-animation-timing-function: ease-in;}
+from 42% to 58%{-webkit-animation-timing-function: ease-in-out;}
+from 58% to 100%{-webkit-animation-timing-function: ease-out;}
+}
+.hideThis {
+	visibility: hidden;
+}
+.rotateCard {
+	visibility: inherit;
+}
+.back {
+	width: 86px;
+	height: 127px;
+	position:absolute;
+	top:7.5%;
+	left:0%;
+}
+.shadow {
+	margin-left:-5%;
+	margin-top:-7%;
+	width: 96px;
+	height: 137px;
+	vertical-align: top;
+}
+.card {
+	width: 86px;
+	height: 127px;
+	position:fixed;
+}
+.cardFace {
+	width: 86px;
+	height: 127px;
+	vertical-align: top;
+}
+.fix {
+	-webkit-animation-name: flipCard;
+	-webkit-border-radius: 0px;
+	-webkit-transition: -webkit-transform 1000ms;
+    -webkit-transform-style: preserve3d;
+    -webkit-perspective: 300;
+    -webkit-backface-visibility: hidden;
+	position: fixed;
+	width: 86px;
+	height: 127px;
+	vertical-align: top;
+}
+/*------------------------------------*/
+.front {
+	width: 86px;
+	height: 127px;
+}
+.backSide {
+	width: 86px;
+	height: 127px;
+}
+
+/*------------------------------------*/
+
+.cardLeft {
+	position:absolute;
+	width: 32px;
+	height: 32px;
+	top: -0%;
+	left: -3.5%;
+}
+.cardRight {
+	position:absolute;
+	width: 32px;
+	height: 32px;
+	bottom:1%;
+	left:64.5%;
+}
+.cardSuit {
+	position:absolute;
+	width: 75px;
+	height: 75px;
+	vertical-align: middle;
+	left:8.5%;
+	top:20.5%;
+}
+#card1contents, #card1backside, #card1 {
+	left: 8px;
+	top: 107px;
+}
+#card2contents, #card2backside, #card2 {
+	left: 103px;
+	top: 107px;
+}
+#card3contents, #card3backside, #card3 {
+	left: 198px;
+	top: 107px;
+}
+#card4contents, #card4backside, #card4 {
+	left: 293px;
+	top: 107px;
+}
+#card5contents, #card5backside, #card5 {
+	left: 388px;
+	top: 107px;
+}

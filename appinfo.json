@@ -1,0 +1,15 @@
+{
+	"id": "com.fxspec.wildnpokerhd",
+	"version": "1.8.0",
+	"vendor": "fxspec06",
+	"type": "web",
+	"main": "index.html",
+	"title": "Wild'n Video Poker",
+	"copyright": "&copy; Copyright 2011 fxspec06",
+	"icon": "icons/64.png",
+	"splashIcon": "icons/114.png",
+	"splashbackground": "images/backdrops/backdrop1.jpg",
+	"noWindow": false,
+	"uiRevision": 2,
+	"plug-ins": true
+}

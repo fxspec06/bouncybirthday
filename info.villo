@@ -1,0 +1,12 @@
+villo.load({
+   "id": "com.fxspec.wildnpoker",
+   "version": "1.7.9",
+   "developer": "fxspec06",
+   "type": "web",
+   "title": "Wild'n Video Poker",
+   "api": "26e2eab33d0622baaad7892ced0fad83",
+   "push": true,
+   "extensions": [
+      "villo-common.js"
+   ]
+});

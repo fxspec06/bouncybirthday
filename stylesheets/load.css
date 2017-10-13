@@ -1,0 +1,72 @@
+/*
+ *
+ * Copyright 2011 fxspec06 (Bryan Leasot)
+ * Not for distribution
+ * Use of Villo appliccable to the appropriate licenses
+ *
+ */
+#load {
+	width:480px;
+	height:320px;
+	position:fixed;
+	visibility:hidden;
+}
+#CONTINUE {
+	width:480px;
+	height:320px;
+	position:fixed;
+	visibility:hidden;
+}
+#BLINK {
+	width:480px;
+	height:320px;
+	position:fixed;
+	visibility:hidden;
+}
+#TAP {
+	width:480px;
+	height:320px;
+	position:relative;
+	visibility:hidden;
+}
+#preSplash {
+	visibility:hidden;
+}
+#preSplash, #avatar {
+	width:480px;
+	height:320px;
+	position:fixed;
+}
+#villoRegister {
+	width:480px;
+	height:320px;
+	top:0;
+	left:0;
+	position:fixed;
+	visibility:hidden;
+}
+#villoRegisterYes {
+	width:80px;
+	height:29px;
+	top:240px;
+	left:200px;
+	position:fixed;
+	visibility:hidden;
+}
+#villoRegisterNo {
+	width:184px;
+	height:29px;
+	top:290px;
+	left:150px;
+	position:fixed;
+	visibility:hidden;
+}
+#villoLight {
+	width:150px;
+	height:150px;
+	top:85px;
+	left:160px;
+	position:fixed;
+	opacity:0.5;
+	visibility:hidden;
+}

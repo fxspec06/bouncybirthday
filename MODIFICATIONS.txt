@@ -1,0 +1,21 @@
+FORMAT:
+each revision will have a version number and revision number
+
+/*
+ * 
+ */
+
+2/3/12
+
+v1.7.9 rev 01
+work on BBOS
+include villo 0.9.5
+change stage assistant
+originated from webOS free
+
+v1.7.9 rev 02
+originated from webOS paid (rev01)
+updated stage assistant isPaid "UPGRADE"
+eliminated load.js 183 logs
+modified villo.js
+fixed index style
