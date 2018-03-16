@@ -297,7 +297,7 @@ StageAssistant.prototype.setup = function() {
 	//moveVertically = true;
 	verticalMargin = moveVertically ? 30 : 0;
 	
-	speed = 35;
+	speed = 1000;
 	minBet = 5;
 	pWait = 0;
 	difficulty = 3;

@@ -6,6 +6,7 @@ function bounceIcons(){
 	moveSuits5();
 	var suits = ["hearts", "diamonds", "clubs", "spades"];
 	var i = 3;
+	speed = 0;
 	do {
 		document.getElementById(suits[i]).style.visibility = "visible";
 	} while (i--);
