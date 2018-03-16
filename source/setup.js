@@ -18,7 +18,7 @@ function setup() {
 			break;
 	}
 	tStats = t1 = t2 = 0;
-	document.addEventListener(window, "keydown", MenuAssistant.prototype.iconChange.bind(MenuAssistant.prototype));
+	window.addEventListener("keydown", MenuAssistant.prototype.iconChange.bind(MenuAssistant.prototype));
 	MenuAssistant.prototype.showBackdrop();
 	MenuAssistant.prototype.showMenus();
 	//villo.doNothing("easterEgg");

@@ -110,7 +110,8 @@ LoadAssistant.prototype.setup = function() {
 	setTimeout(this.avatar.bind(this), 0);
 	this.goToMain = this.goToMain.bind(this);
 
-	this.activate();
+	
+	
 	currentScene = "load";
 
 	for(var i = 0; i < numBackdrops; i++) {
@@ -125,13 +126,17 @@ LoadAssistant.prototype.setup = function() {
 	MenuAssistant.prototype.showBackdrop();
 	activateButtons();
 	loadSounds();
+	this.activate();
 };	
 
 LoadAssistant.prototype.goToMain = function(event) {
 	this.deactivate();
 	//this.cleanup();
-	swapScene("menu");
-	document.getElementById("wildngame-scene").style.display = 'none';
+	setTimeout(function(){
+		swapScene("menu");
+		document.getElementById("wildngame-scene").style.display = 'none';
+	}.bind(this), 0);
+	
 };
 LoadAssistant.prototype.splash = function(event) {
 	document.getElementById("preSplash").style.visibility = "hidden";
@@ -144,10 +149,12 @@ LoadAssistant.prototype.avatar = function(event) {
 };
 LoadAssistant.prototype.preSplash = function(event) {
 	document.getElementById("avatar").style.visibility = "hidden";
-	setTimeout(this.splash.bind(this), 3000);
-	setTimeout(this.loaded.bind(this), 6000);
+	/* SET THIS VARIABLE TO 3000 FOR VILLO SPLASH SCREEN,
+		SET TO 0 TO SKIP VILLO SPLASH SCREEN */
+	var VilloSplash = 0;
+	setTimeout(this.splash.bind(this), VilloSplash);
+	setTimeout(this.loaded.bind(this), VilloSplash+3000);
 	document.getElementById("preSplash").style.visibility = "visible";
-	swapScene("menu");
 };
 LoadAssistant.prototype.activate = function() {
 	if(localStorage["wildnGameStats"]) {
@@ -156,11 +163,12 @@ LoadAssistant.prototype.activate = function() {
 	}
 	console.log(wildnGameStats);
 	this.setStats();
-	document.addEventListener(document.getElementById("TAP"), "click", this.goToMain.bind(this));
+	
+	document.getElementById("TAP").addEventListener("click", this.goToMain.bind(this));
 };
 LoadAssistant.prototype.deactivate = function() {
-	document.removeEventListener(document.getElementById("TAP"), "click", this.goToMain.bind(this));
 	window.clearTimeout(t);
+	document.getElementById("TAP").removeEventListener("click", this.goToMain.bind(this));
 };
 LoadAssistant.prototype.blink = function(e) {
 	if(!this.didLoad) {document.getElementById("BLINK").style.visibility === "visible" ? document.getElementById("BLINK").style.visibility = "hidden" : document.getElementById("BLINK").style.visibility = "visible";
@@ -174,7 +182,13 @@ LoadAssistant.prototype.loaded = function() {
 	this.didLoad = true;
 	document.getElementById("BLINK").style.visibility === "hidden";
 	document.getElementById("TAP").style.visibility = "visible";
+	
+	
+/* MODIFIED******* OLD
 	this.blink();
+*/
+/* NEW */
+	this.goToMain();
 };
 LoadAssistant.prototype.setStats = function() {
 	var c = 0;
